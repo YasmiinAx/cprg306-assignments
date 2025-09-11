@@ -3,7 +3,7 @@ export default function StudentInfo() {
     return(
     <main>
         <h1>Yasmiin Abdullahi</h1>
-        <Link href="https://https://github.com/YasmiinAx">
+        <Link href="https://github.com/YasmiinAx">
         https://github.com/YasmiinAx
         </Link>
     </main>
