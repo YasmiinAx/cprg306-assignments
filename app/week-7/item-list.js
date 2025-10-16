@@ -47,14 +47,17 @@ export default function ItemList( {items, onDeleteItem} ) {
                 { sortBy === "group" ? (
                     sortedCategories.map((category) => {
                         const sortedItems = groupedItems[category].sort((a, b) => a.name.localeCompare(b.name));
-
                         return (
                             <li key={category} className="mt-5 mb-6 bg-red-300 w-110 m-auto p-3 rounded-2xl">
                                 <h3 className="capitalize text-xl font-bold ml-2">{category}</h3>
                                 <ul>
                                     {sortedItems.map(item => (
-                                        <Item key={item.id} 
-                                        props={item} 
+                                        <Item 
+                                        key={item.id} 
+                                        id={item.id}
+                                        name={item.name}
+                                        quantity={item.quantity}
+                                        category={item.category}
                                         onDelete={onDeleteItem}/>
                                     ))}
                                 </ul>
@@ -65,7 +68,10 @@ export default function ItemList( {items, onDeleteItem} ) {
                     itemsCopy.map((item) => (
                     <Item 
                     key={item.id} 
-                    props={item} 
+                    id={item.id}
+                    name={item.name}
+                    quantity={item.quantity}
+                    category={item.category}
                     onDelete={onDeleteItem}/>
                 ))
             )}

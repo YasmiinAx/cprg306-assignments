@@ -1,5 +1,4 @@
-export default function Item( {props, onDelete} ) {
-    const {id, name, quantity, category} = props;
+export default function Item( {id, name, quantity, category, onDelete} ) {
     return (
         <li className="bg-slate-600 p-3 w-100 m-3 text-white mx-auto font-sans">
             <h2 className="text-2xl font-bold">{name}</h2>
