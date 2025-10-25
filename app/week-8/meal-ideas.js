@@ -32,7 +32,7 @@ export default function MealIdeas({ingredient}) {
 
     return (
         <div>
-            <h1 className="mt-4 font-bold text-xl mb-2">Meal ideas for "{ingredient}"</h1>
+            <h1 className="mt-4 font-bold text-xl mb-2">Meal ideas for &quot;{ingredient}&quot;</h1>
             
             {meals.length > 0 ? (
             <ul className="grid grid-cols-2 gap-3 w-120 mb-5">
