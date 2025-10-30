@@ -24,7 +24,7 @@ export default function NewItem( {onAddItem} ) {
     };
 
     return (
-        <form onSubmit ={handleSubmit} className="flex justify-center items-center flex-col border w-100 pt-5 pb-5 mt-2">
+        <form onSubmit ={handleSubmit} className="flex justify-center items-center flex-col border rounded-md w-100 pt-5 pb-5 mt-2">
             <input type="text" id="name" placeholder="Item Name" required value={item.name} onChange={(event) => setItem({ ...item, name: event.target.value })}
             className="border rounded w-90 h-10 pl-2"></input>
 

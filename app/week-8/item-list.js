@@ -35,13 +35,14 @@ export default function ItemList( {items, onItemSelect} ) {
         
     return (
         <div>
-            <div className="flex gap-5 justify-center pt-5 text-white font-bold">
-                <button onClick={() => setSortBy("name")} className={`"border rounded-md h-20 w-30
-                    ${sortBy === "name" ? "bg-amber-500" : "bg-gray-500"}`}> Sort By Name </button>
-                <button onClick={() => setSortBy("category")} className={`"border rounded-md h-20 w-30
-                    ${sortBy === "category" ? "bg-amber-500" : "bg-gray-500"}`}> Sort By Category </button>
-                <button onClick={() => setSortBy("group")} className={`"border rounded-md h-20 w-30
-                    ${sortBy === "group" ? "bg-amber-500" : "bg-gray-500"}`}> Group By Category</button>
+            <div className="flex gap-5 justify-center pt-5 pr-5">
+                <h2 className="text-gray-500 text-lg pt-1 font-medium">Sort by:</h2>
+                <button onClick={() => setSortBy("name")} className={`"border rounded-md h-8 w-18
+                    ${sortBy === "name" ? "bg-blue-500 text-white" : "bg-gray-100 border border-gray-200"}`}>Name</button>
+                <button onClick={() => setSortBy("category")} className={`"border rounded-md h-8 w-21
+                    ${sortBy === "category" ? "bg-blue-500 text-white" : "bg-gray-100 border border-gray-200"}`}>Category </button>
+                <button onClick={() => setSortBy("group")} className={`"border rounded-md h-8 w-24
+                    ${sortBy === "group" ? "bg-blue-500 text-white" : "bg-gray-100 border border-gray-200"}`}>Categories</button>
             </div>
 
             <ul>
@@ -49,8 +50,8 @@ export default function ItemList( {items, onItemSelect} ) {
                     sortedCategories.map((category) => {
                         const sortedItems = groupedItems[category].sort((a, b) => a.name.localeCompare(b.name));
                         return (
-                            <li key={category} className="mt-5 mb-6 bg-red-300 w-110 m-auto p-3 rounded-2xl">
-                                <h3 className="capitalize text-xl font-bold ml-2">{category}</h3>
+                            <li key={category} className="mt-5">
+                                <h3 className="capitalize text-xl font-bold">{category}</h3>
                                 <ul>
                                     {sortedItems.map(item => (
                                         <Item 
